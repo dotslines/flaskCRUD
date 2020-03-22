@@ -1,0 +1,16 @@
+<header class='container-fluid p-0 mb-5 bg-success'>
+    <h1 class="text-center p-3">Flask CRUD template</h1>
+    <nav class='nav bg-dark p-0 justify-content-end'>
+        <div class="navbar pr-5">
+            <a href="{{ url_for('home') }}" class='nav-link text-white pt-0 pb-0 m-0' id='/'>home</a>
+            <a href="{{ url_for('create') }}" class='nav-link text-white pt-0 pb-0 m-0' id='/create'>create</a>
+            <a href="{{ url_for('retrieve') }}" class='nav-link text-white pt-0 pb-0 m-0' id='/retrieve'>retrieve</a>
+            <form class="navbar-form navbar-left d-flex" action="{{ url_for('search') }}">
+		      <div class="form-group  p-0 pr-1 m-0">
+		        <input type="text" class="form-control" placeholder="Search" name='search'>
+		      </div>
+		      <button type="submit" class="btn">Submit</button>
+		    </form>
+        </div>
+    </nav>
+</header>

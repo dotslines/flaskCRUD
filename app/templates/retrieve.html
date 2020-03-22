@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container w-75">
+		<h2 class="h3 p-4">Data retrieved from 
+			<span class="bg-success">DB</span>.
+		</h2>
+		<table class="table p-4">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Content</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for e in context.queryset %}
+				<tr>
+					<td>{{ e.name }}</td>
+					<td>{{ e.content }}</td>
+					<td><a href="{{ url_for('update', id=e.id) }}">edit</a></td>
+					<td><a href="{{ url_for('delete', id=e.id) }}">delete</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

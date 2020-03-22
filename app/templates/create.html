@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class='container w-25 p-3'>
+		<h2 class="h3 p-4">Submit the new 
+			<span class="bg-success">Entity</span>.
+		</h2>
+		<form action="" method="post" class="form-group">
+			{{ context.form.hidden_tag() }}
+			<p>
+				{{ context.form.name.label }}
+				{{ context.form.name }}
+			</p>
+			<p>
+				{{ context.form.content.label }}
+				{{ context.form.content }}
+			</p>
+				{{ context.form.submit }}
+		</form>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('name').className+=' form-control'
+		document.getElementById('content').className+=' form-control'
+		document.getElementById('submit').className+=' btn btn-outline-success'
+	</script>
+{% endblock %}
